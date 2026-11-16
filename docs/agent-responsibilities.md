@@ -46,9 +46,9 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 - **Escalates:** untestable ACs (coverage gaps); defects (documented, not fixed).
 
 ## Release Manager (`release-manager`) — phase 8
-- **Inputs:** all artifacts, all phases 1–7 approved. **Outputs:** `08-pull-request.md`, completed matrix, the PR.
-- **Tools:** read, search, edit, execute (git push / gh pr create after approval only). **Must not:** ship with open gates or unwaived gaps; force-push; merge.
-- **Escalates:** open gates, matrix gaps, push/auth failures, merge conflicts.
+- **Inputs:** all artifacts, all phases 1–7 approved, verification status READY FOR PR. **Outputs:** `08-pull-request.md` (Summary, Changes Made, Test Evidence, Known Limitations, Reviewer Checklist), `CHANGELOG.md` entry, completed matrix, the PR and its URL/status.
+- **Tools:** read, search, edit, execute (git push / gh pr create after approval only). **Must not:** ship with open gates, failed pre-PR checks or unwaived gaps; force-push; merge.
+- **Escalates:** failed pre-PR checks, secrets in the diff, matrix gaps, push/auth failures, merge conflicts.
 
 ## Shared rules (all agents)
 Defined in `.github/copilot-instructions.md`: never invent requirements; respect gates; stay in phase; maintain traceability; artifacts carry Open Questions + Assumptions; failures are reported, never papered over.
