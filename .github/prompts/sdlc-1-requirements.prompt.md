@@ -6,8 +6,9 @@ argument-hint: "Story ID (e.g. US-001)"
 ---
 Execute SDLC phase 1 (Requirements Engineering) for the story given as input, using the `requirements-engineering` skill.
 
-- Input documents: `docs/sdlc/stories/<story>/user-story.md`, `workflow-status.yml`.
-- Produce only `01-requirements.md` and the initial traceability matrix rows. Do not design, plan, or implement.
-- Before finishing, validate the output against the skill's quality checklist and state the result of each check.
-- Report all Open Questions and Assumptions explicitly in your summary. If the story lacks information, ask — never invent requirements.
-- Set phase `1-requirements` to `awaiting_approval` and STOP. Do not start phase 2.
+- Input: the user story from pasted text, a repo file, or a Jira issue / Confluence page read through the Atlassian MCP server. If none is supplied or the MCP server is unavailable, stop and ask; never assume content. Also read `workflow-status.yml`.
+- Produce only `docs/sdlc/stories/<story>/01-requirements.md` (14 sections, REQ/NFR/BR/AC IDs) and the initial traceability matrix rows. Do not design, plan, or implement.
+- Clarification: before finalizing, ask grouped, specific questions with the reason for each, wait for answers, and record them. Never invent answers or silently resolve ambiguities.
+- Validate unique IDs, testability, measurable ACs, no contradictions, and all unresolved questions documented; state each check's result.
+- Report Open Questions and Assumptions explicitly.
+- Set phase `1-requirements` to `awaiting_approval`, present for review, and STOP. Do not start phase 2 until the human explicitly approves.

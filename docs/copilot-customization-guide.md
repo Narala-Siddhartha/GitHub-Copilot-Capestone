@@ -60,7 +60,7 @@ docs/
 
 **Adding a hook:** use only supported events (`SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PreCompact`, `SubagentStart`, `SubagentStop`, `Stop`); keep scripts fast (timeouts are set per hook) and non-throwing; log decisions to `docs/sdlc/audit/`. Note that not every event fires on every Copilot surface (VS Code vs CLI vs cloud) — treat hooks as defense in depth, not the only gate.
 
-**MCP integrations:** when a backlog (e.g. Jira/ADO) or the GitHub MCP server is configured, grant access per agent via `tools: [<server>/*]` in the relevant `*.agent.md` (e.g. give `release-manager` the GitHub MCP server to open PRs). Keep MCP access role-scoped — do not add servers globally.
+**MCP integrations:** the Requirements Analyst is granted `atlassian/*` in its `tools:` so it can read Jira issues and Confluence pages. This assumes the MCP server is registered under the name `atlassian` (e.g. in `.vscode/mcp.json`); if you register it under another name, update that `tools:` entry. Authenticate the server before running phase 1. Keep MCP access role-scoped: do not add servers globally. When a backlog or the GitHub MCP server is configured for other roles, grant it the same way (e.g. `release-manager`).
 
 ## Known surface limitations
 

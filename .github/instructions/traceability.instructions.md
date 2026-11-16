@@ -10,6 +10,7 @@ description: "Use when assigning requirement IDs, linking tasks/tests/code to re
 | User story | `US-###` | Orchestrator (intake) | `US-001` |
 | Functional requirement | `REQ-###` | requirements-analyst | `REQ-003` |
 | Non-functional requirement | `NFR-###` | requirements-analyst | `NFR-001` |
+| Business rule | `BR-###` | requirements-analyst | `BR-001` |
 | Acceptance criterion | `AC-<req>-<n>` | requirements-analyst | `AC-003-2` |
 | Architecture decision | `ADR-###` | solution-architect | `ADR-002` |
 | Design review finding | `DRF-###` | design-reviewer | `DRF-001` |
@@ -23,7 +24,7 @@ IDs are scoped per story, stable, and never reused or renumbered.
 
 User Story → Requirements → Architecture → Design Decisions → Implementation Tasks → Source Code → Tests → PR.
 
-- Every `REQ`/`NFR` cites the `US` it derives from.
+- Every `REQ`/`NFR` cites the `US` it derives from. Every `BR` is cited by at least one `REQ`/`NFR`/`AC` that enforces it.
 - Every `ADR` lists the `REQ`/`NFR` IDs it addresses.
 - Every `TASK` lists the `REQ`/`NFR`/`ADR` IDs it implements. A task with no requirement reference is invalid.
 - Source files/commits reference `TASK` IDs (commit messages and/or code comments at the change site).
