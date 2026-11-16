@@ -13,7 +13,7 @@ Package the fully approved story into a reviewable pull request with a complete,
 - Story branch with all commits; clean working tree
 
 ## Procedure
-1. **Gate audit**: read `workflow-status.yml`; build a table of all 8 phases with status, approved_by, approved_at. ANY phase (1–7) not `approved` → abort and report which gate is open.
+1. **Gate audit**: read `workflow-status.yml`; build a table of all 8 phases with status, approved_by, approved_at. ANY phase (1–7) not `approved` → abort and report which gate is open. Also confirm the final verification status in `07-test-report.md` is READY FOR PR; NOT READY FOR PR → abort.
 2. **Traceability audit**: run `node .github/skills/verification-testing/scripts/check-traceability.js US-###`; complete `traceability-matrix.md` (Code column from `git log --name-only`, TEST column from the test report). Gaps → stop; request human waiver or route back.
 3. **Branch hygiene**: `git status` clean; branch contains all artifact files; check divergence from `main` (`git log main..HEAD`, `git log HEAD..main`); surface conflicts — never auto-resolve silently.
 4. Assemble the PR description from [PR template](./assets/pr-template.md) → `08-pull-request.md`: story summary, requirements list, ADR summary, task list with commits, test results summary, full chain US→REQ→ADR→TASK→code→TEST, artifact links, reviewer checklist.
