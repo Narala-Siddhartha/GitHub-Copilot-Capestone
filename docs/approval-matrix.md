@@ -11,7 +11,7 @@ Every phase ends in a human approval gate. Agents may set `awaiting_approval`; o
 | 3 Design Review | Tech lead | DRF findings vs decision; Critical/High findings resolved or recorded as accepted risks; only APPROVED proceeds to phase 4 | Back to phase 2; architecture updated, then re-reviewed |
 | 4 Implementation Plan | Tech lead / dev team | Task coverage, order, estimates, verification notes | Planner reworks |
 | 5 Implementation | Dev lead (informed by phase 6) | Implementation log: all tasks accounted for, deviations approved | Implementer fixes on the story branch |
-| 6 Code Review | Dev lead | CRF findings vs verdict; security section | Implementer reworks; reviewer re-reviews delta |
+| 6 Code Review | Dev lead | CRF findings vs decision; security section; dependency review | Implementer reworks; reviewer re-reviews delta |
 | 7 Verification & Testing | QA owner / dev lead | Coverage table, run results, defects, gaps | Defects → phase 5 rework path; gaps → waive or fix |
 | 8 Pull Request | Release owner | Gate audit (8/8), traceability check output, PR description | PR not created; gaps routed back |
 

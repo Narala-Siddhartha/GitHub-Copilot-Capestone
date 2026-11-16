@@ -37,8 +37,8 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 
 ## Code Reviewer (`code-reviewer`) — phase 6
 - **Inputs:** story branch diff, plan, log, architecture. **Outputs:** `06-code-review.md` (CRF findings, security assessment, verdict).
-- **Tools:** read, search, edit (review doc only), execute (read-only git only). **Must not:** change code; approve with open blockers.
-- **Escalates:** scope creep, false completions, secrets in diff (blockers).
+- **Tools:** read, search, edit (review doc only), execute (read-only git and non-modifying dependency-audit tooling only). **Must not:** change code; approve with open Critical/High findings; approve automatically; merge or create a PR.
+- **Escalates:** Critical findings (immediately, in chat), unapproved scope, false completions, secrets in diff.
 
 ## Test Engineer (`test-engineer`) — phase 7
 - **Inputs:** approved phases 1–6; requirements as the verification contract. **Outputs:** tests on the branch, `07-test-report.md`, matrix TEST column, traceability-check output.
