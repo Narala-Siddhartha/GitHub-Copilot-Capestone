@@ -25,9 +25,9 @@ author: implementation-planner
 | REQ/NFR | Covered by tasks |
 |---------|------------------|
 
-## Design-review conditions
-| Condition (from 03-design-review.md) | Addressed by |
-|--------------------------------------|--------------|
+## Design-review accepted risks
+| Accepted risk (from 03-design-review.md) | Addressed by |
+|------------------------------------------|--------------|
 
 ## Risks
 - 

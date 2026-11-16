@@ -13,7 +13,7 @@ Turn the approved design into an executable contract: a dependency-ordered task 
 - Current repository layout (plan file-level changes realistically)
 
 ## Procedure
-1. Verify phases 1–3 approved; collect any approve-with-conditions items from `03-design-review.md` — each becomes a task or task constraint.
+1. Verify phases 1–3 approved and that the decision in `03-design-review.md` is APPROVED; refuse otherwise. Collect its accepted risks; each becomes a task or task constraint where it affects the work.
 2. Walk the component model; derive tasks (`TASK-###`) per component/change. Each task: goal, affected files/modules, referenced REQ/NFR/ADR IDs, prerequisite tasks, estimate (S/M/L), verification note ("done when …"), dependency additions (name, purpose, license) if any.
 3. Order tasks by dependency; scaffolding → core logic → integration → hardening. No circular prerequisites.
 4. Split any task touching >5 files or mixing concerns.
@@ -26,7 +26,7 @@ Turn the approved design into an executable contract: a dependency-ordered task 
 
 ## Quality checklist
 - [ ] Every REQ/NFR covered by ≥1 task; no orphan tasks
-- [ ] Every design-review condition mapped to a task
+- [ ] Every design-review accepted risk that affects the work mapped to a task or constraint
 - [ ] Order respects prerequisites; no cycles
 - [ ] Every task has a concrete verification note
 - [ ] File-level impact listed per task (checked against the real repo tree)
@@ -34,7 +34,7 @@ Turn the approved design into an executable contract: a dependency-ordered task 
 
 ## Failure handling
 - Architecture lacks detail needed for a concrete task → Open Question naming the missing decision; do not invent design.
-- Review conditions conflict with an ADR → escalate; do not pick a side silently.
+- An accepted risk from the design review conflicts with an ADR → escalate; do not pick a side silently.
 
 ## Example task
 **TASK-003 — Reset-token persistence (M)**

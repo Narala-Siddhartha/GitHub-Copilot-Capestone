@@ -8,7 +8,7 @@ Every phase ends in a human approval gate. Agents may set `awaiting_approval`; o
 |--------------------|----------|-------------------------------------|--------------|
 | 1 Requirements | Product owner / requester | REQ/NFR/AC completeness, open questions answered, scope correct | Analyst reworks; IDs preserved |
 | 2 Architecture | Tech lead (informed by phase 3) | Coverage table, ADR trade-offs | Architect reworks ADRs/components |
-| 3 Design Review | Tech lead | DRF findings vs verdict; blockers resolved or accepted as conditions | Back to phase 2; phases 3–4 re-run |
+| 3 Design Review | Tech lead | DRF findings vs decision; Critical/High findings resolved or recorded as accepted risks; only APPROVED proceeds to phase 4 | Back to phase 2; architecture updated, then re-reviewed |
 | 4 Implementation Plan | Tech lead / dev team | Task coverage, order, estimates, verification notes | Planner reworks |
 | 5 Implementation | Dev lead (informed by phase 6) | Implementation log: all tasks accounted for, deviations approved | Implementer fixes on the story branch |
 | 6 Code Review | Dev lead | CRF findings vs verdict; security section | Implementer reworks; reviewer re-reviews delta |

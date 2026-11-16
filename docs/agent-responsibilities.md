@@ -28,7 +28,7 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 ## Implementation Planner (`implementation-planner`) — phase 4
 - **Inputs:** approved phases 1–3. **Outputs:** `04-implementation-plan.md` (ordered TASK list), matrix TASK column.
 - **Tools:** read, search, edit. **Must not:** write code; re-architect.
-- **Escalates:** insufficient design detail; review conditions conflicting with ADRs.
+- **Escalates:** insufficient design detail; accepted design-review risks conflicting with ADRs.
 
 ## Implementer (`implementer`) — phase 5
 - **Inputs:** approved plan + architecture contracts. **Outputs:** code on `story/US-###-*` branch, `05-implementation-log.md`, matrix Code column.
