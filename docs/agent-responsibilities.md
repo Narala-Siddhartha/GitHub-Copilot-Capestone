@@ -31,9 +31,9 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 - **Escalates:** insufficient design detail; accepted design-review risks conflicting with ADRs.
 
 ## Implementer (`implementer`) — phase 5
-- **Inputs:** approved plan + architecture contracts. **Outputs:** code on `story/US-###-*` branch, `05-implementation-log.md`, matrix Code column.
-- **Tools:** read, edit, search, execute, todo. **Must not:** work without a TASK; touch `main`; weaken tests; add unplanned dependencies.
-- **Escalates:** plan/reality conflicts (deviation proposals); blocked tasks.
+- **Inputs:** approved plan + architecture contracts. **Outputs:** code and unit tests on `story/US-###-*` branch, doc updates, task status in the plan (status field only), `05-implementation-log.md`, matrix Code column.
+- **Tools:** read, edit, search, execute, todo. **Must not:** work without a TASK; touch `main`; weaken tests; add unplanned dependencies; create the PR.
+- **Escalates:** plan/reality conflicts (deviation proposals); blocked dependencies; significant or irreversible changes needing human approval.
 
 ## Code Reviewer (`code-reviewer`) — phase 6
 - **Inputs:** story branch diff, plan, log, architecture. **Outputs:** `06-code-review.md` (CRF findings, security assessment, verdict).
