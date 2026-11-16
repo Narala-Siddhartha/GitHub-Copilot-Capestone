@@ -7,46 +7,80 @@ author: solution-architect
 ---
 # Architecture — US-XXX
 
-## Driving requirements
-(REQ/NFR IDs that most constrain this design, with one-line rationale each)
+## 1. Architecture Overview
+(Scope and approach, driven by the approved requirements. List the REQ/NFR IDs that most constrain the design.)
 
-## Component model
-(components, responsibilities, dependencies; Mermaid or text diagram)
+## 2. Architecture Principles
+| Principle | Rationale | Requirements |
+|-----------|-----------|--------------|
 
-## Interfaces
-### <Component A> ↔ <Component B>
-| Operation | Input | Output | Errors |
-|-----------|-------|--------|--------|
+## 3. High-Level Architecture Diagram
+```mermaid
+flowchart LR
+  %% actors, system boundary, external systems
+```
 
-## Data model
-(entities, fields, relationships, ownership, retention)
+## 4. Component Diagram
+```mermaid
+flowchart TB
+  %% components and dependencies
+```
 
-## Cross-cutting concerns
-### Error handling
-### Security
-(trust boundaries, authn/z, data protection)
-### Observability
-### Configuration
+## 5. Component Responsibilities
+| Component | Responsibility | Depends on | Supports (REQ/NFR) |
+|-----------|----------------|------------|--------------------|
 
-## Architecture decisions
+## 6. Data Flow Diagram
+```mermaid
+sequenceDiagram
+  %% key flows, including failure paths
+```
+
+## 7. API and Integration Design
+| Interface | Operation | Input | Output | Errors | Auth |
+|-----------|-----------|-------|--------|--------|------|
+
+External integration points and their failure behavior:
+
+## 8. Data Model
+(Entities, fields, relationships, ownership, storage choice, retention, privacy classification.)
+
+## 9. Security Architecture
+(Authentication, authorization, trust boundaries, data protection at rest and in transit, secrets handling, input validation, audit.)
+
+## 10. Deployment Architecture
+(Environments, hosting, scaling, availability, observability: logging, metrics, tracing, alerting.)
+
+## 11. Technology Stack
+| Layer | Choice | Justification | ADR |
+|-------|--------|---------------|-----|
+Choices pending a human decision are marked "proposed".
+
+## 12. Architecture Decision Records
 ### ADR-001 — <title> (REQ-xxx, NFR-xxx)
-- **Context:**
-- **Options:** (≥2, with trade-offs)
-- **Decision:**
+- **Why required:**
+- **Alternatives:** (at least two)
+- **Advantages / disadvantages:**
+- **Trade-offs:**
+- **Decision:** (or "proposed" with the open question)
 - **Consequences:**
 
-## Requirements coverage
-| REQ/NFR | Satisfied by (component / ADR) |
-|---------|--------------------------------|
+## 13. Risks and Constraints
+| ID | Risk / constraint | Likelihood | Impact | Mitigation | Related REQ/NFR |
+|----|-------------------|------------|--------|------------|-----------------|
 
-## Blocked Requirements
-(none, or ID + reason + alternatives)
+Blocked requirements (cannot be satisfied as stated), with reasons and alternatives:
+
+## 14. Requirements Traceability Matrix
+| REQ/NFR | Component(s) | ADR(s) | Notes |
+|---------|--------------|--------|-------|
+Every component in section 5 must appear here at least once.
 
 ## Open Questions
 - 
 
 ## Assumptions
-- **ASM-00X** — … Risk: …
+- **ASM-001** — … Risk: …
 
 ## Revision History
 | Date | Change | Reason |

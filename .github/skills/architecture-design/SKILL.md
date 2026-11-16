@@ -10,31 +10,33 @@ Produce an architecture that demonstrably satisfies every approved requirement, 
 
 ## Required inputs
 - `docs/sdlc/stories/US-###/01-requirements.md` (phase 1 `approved`)
-- Existing codebase structure and `.github/instructions/source-code.instructions.md` (current stack, if any)
+- Existing codebase structure, existing technology and infrastructure constraints, and `.github/instructions/source-code.instructions.md` (current stack, if any)
 
 ## Procedure
-1. Verify phase 1 is `approved` in `workflow-status.yml`; refuse otherwise.
-2. Restate the driving requirements: list the REQ/NFR IDs that most constrain the design.
-3. Define the **component model**: components, responsibilities, dependencies (text diagram or Mermaid). Every component must be justified by ≥1 requirement.
-4. Define **interfaces/contracts** between components and at system boundaries: operations, inputs, outputs, error behavior.
-5. Define the **data model**: entities, fields, relationships, ownership, retention.
-6. Address **cross-cutting concerns** explicitly: error handling, security (trust boundaries, authn/z, data protection), observability, configuration.
-7. Write an **ADR** (`ADR-###`) per significant decision: context, ≥2 options with trade-offs, decision, consequences, linked REQ/NFR IDs. Stack-blocking decisions without a chosen stack → `ADR-### (proposed)` + Open Question.
-8. Build the **coverage table**: every REQ/NFR → component(s)/ADR(s) that satisfy it. Unsatisfiable ones go under `## Blocked Requirements` with reasons.
-9. Fill [architecture template](./assets/architecture-template.md) → `02-architecture.md`; update the ADR column of the traceability matrix.
-10. Run the checklist; set phase `2-architecture` to `awaiting_approval`; stop.
+1. Verify phase 1 is `approved` in `workflow-status.yml`; refuse otherwise. Never design against unapproved or invented requirements.
+2. Restate the driving requirements: list the REQ/NFR/BR IDs that most constrain the design.
+3. Define the **component model** and responsibilities, and how components communicate. Every component must be justified by ≥1 requirement. Do not add technologies or microservices the requirements don't need; prefer the simplest design (a modular monolith unless an NFR demands otherwise).
+4. Define **APIs and integration points**: operations, inputs, outputs, error behavior.
+5. Define the **data model** and storage requirements: entities, fields, relationships, ownership, retention.
+6. Define **authentication and authorization**, the **deployment architecture**, and the scalability, availability, observability and security considerations.
+7. Evaluate **technology choices**. Write an **ADR** (`ADR-###`) per major choice: why it is required, ≥2 alternatives, advantages and disadvantages, trade-offs, decision, consequences, linked REQ/NFR IDs. Stack-blocking decisions without a chosen stack → `ADR-### (proposed)` + Open Question for the human.
+8. Build the **traceability matrix** (section 14): every REQ/NFR → component(s)/ADR(s). Every component must appear in it at least once. Unsatisfiable requirements go under Risks and Constraints → blocked requirements, with reasons.
+9. Fill [architecture template](./assets/architecture-template.md) → `02-architecture.md`; update the ADR column of the story's `traceability-matrix.md`.
+10. Run the checklist; set phase `2-architecture` to `awaiting_approval`; stop. Produce no production code.
 
 ## Output format
-`02-architecture.md` per the template: frontmatter, driving requirements, component model, interfaces, data model, cross-cutting concerns, ADRs, coverage table, open questions, assumptions.
+`02-architecture.md` with the 14 template sections: Architecture Overview, Architecture Principles, High-Level Architecture Diagram (Mermaid), Component Diagram, Component Responsibilities, Data Flow Diagram, API and Integration Design, Data Model, Security Architecture, Deployment Architecture, Technology Stack, Architecture Decision Records, Risks and Constraints, Requirements Traceability Matrix.
 
 ## Quality checklist
-- [ ] Coverage table maps 100% of REQ/NFR IDs (or Blocked Requirements explains the gap)
-- [ ] Every ADR has ≥2 options and explicit trade-offs
-- [ ] Every component justified by a requirement (no speculative parts)
+- [ ] Every major component supports ≥1 requirement (no speculative parts)
+- [ ] Traceability matrix maps 100% of REQ/NFR IDs (or blocked requirements are explained)
+- [ ] All critical NFRs addressed with concrete, measurable strategies
+- [ ] Every ADR has ≥2 alternatives and explicit trade-offs
+- [ ] Mermaid diagrams present and consistent with the component list
 - [ ] Interfaces define error behavior, not just happy paths
-- [ ] NFR strategies concrete and measurable
-- [ ] Security subsection identifies trust boundaries
-- [ ] No implementation-level detail (function bodies, exact file names)
+- [ ] Security architecture identifies trust boundaries, authn/z, and data protection
+- [ ] No unnecessary technologies or microservices
+- [ ] No production code
 
 ## Failure handling
 - Conflicting NFRs (e.g., latency vs. consistency) → present the conflict as an ADR with options, mark `(proposed)`, escalate.
