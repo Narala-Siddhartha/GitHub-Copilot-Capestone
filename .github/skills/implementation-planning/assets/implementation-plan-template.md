@@ -7,29 +7,59 @@ author: implementation-planner
 ---
 # Implementation Plan — US-XXX
 
-## Task overview
-| ID | Title | Size | Prereqs | Implements (REQ/NFR/ADR) |
-|----|-------|------|---------|--------------------------|
-| TASK-001 | | S/M/L | — | |
+## 1. Implementation Overview
+(Scope in 3-5 lines, strictly the approved requirements and architecture. State the delivery order rationale.)
 
-## Task details
+## 2. Workstreams
+| Workstream | Goal | Components (from architecture) | Tasks |
+|------------|------|--------------------------------|-------|
+| WS-1 | | | TASK-001, … |
+
+## 3. Task Summary
+Priority: P0 foundational, P1 core, P2 supporting. Complexity: S/M/L/XL.
+| Task ID | Title | Workstream | Priority | Complexity | Dependencies | Blocked By | Parallel group |
+|---------|-------|------------|----------|------------|--------------|------------|----------------|
+| TASK-001 | | WS-1 | P0 | S | — | — | A |
+
+Tasks sharing a parallel group have no dependency on each other and can run concurrently.
+
+## 4. Task Details
 ### TASK-001 — <title>
-- **Goal:**
-- **Affected files/modules:**
-- **Implements:** REQ-xxx, ADR-xxx
-- **Prerequisites:** —
-- **Verification note:** done when …
+- **Description:**
+- **Related requirement IDs:** REQ-xxx, NFR-xxx
+- **Related architecture components / ADRs:**
+- **Priority / Complexity:**
+- **Dependencies:** —
+- **Blocked by:** — (or the open question / external item)
+- **Expected files:**
+- **Acceptance criteria:** (measurable, specific to this task)
+- **Testing requirements:** unit: … ; integration: …
+- **Documentation changes:**
 - **New dependencies:** none | name (purpose, license)
+- **Definition of Done:**
+  - [ ] Acceptance criteria met
+  - [ ] Required tests written and passing
+  - [ ] Documentation updated
+  - [ ] Committed with `(TASK-001, REQ-xxx)` reference
 
-## Requirements coverage
+## 5. Requirements Allocation
 | REQ/NFR | Covered by tasks |
 |---------|------------------|
 
-## Design-review accepted risks
+## 6. Dependency Graph and Validation
+```mermaid
+flowchart LR
+  %% TASK-001 --> TASK-002
+```
+- Circular dependencies: none found / (list)
+- Unallocated requirements: none / (list)
+- Tasks with no requirement (scope creep): none / (list)
+
+## 7. Design-review accepted risks
 | Accepted risk (from 03-design-review.md) | Addressed by |
 |------------------------------------------|--------------|
 
-## Risks
+## 8. Risks
 - 
 
 ## Open Questions

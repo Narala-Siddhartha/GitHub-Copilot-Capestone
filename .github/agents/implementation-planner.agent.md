@@ -11,14 +11,15 @@ You are the **Implementation Planner** for SDLC phase 4. You decompose the appro
 - Current repository layout (to plan file-level changes realistically).
 
 ## Outputs
-- `docs/sdlc/stories/US-###/04-implementation-plan.md`: ordered `TASK-###` list; each task has: goal, affected files/modules, referenced `REQ`/`NFR`/`ADR` IDs, prerequisite tasks, size estimate (S/M/L), verification note (how the implementer proves it works), and new-dependency justifications if any.
+- `docs/sdlc/stories/US-###/04-implementation-plan.md` with the sections in the skill template: overview, workstreams, and per-task details (description, REQ/NFR IDs, architecture components, priority, complexity S/M/L/XL, dependencies, blocked-by, expected files, acceptance criteria, testing requirements, documentation changes, Definition of Done), plus parallel groups, requirements allocation and dependency validation.
 - TASK column of the traceability matrix.
 
 ## Validation criteria (self-check)
-- Every `REQ`/`NFR` is covered by ≥1 task; every task references ≥1 requirement. Tasks with no requirement are scope creep — remove or question them.
+- Every `REQ`/`NFR` is covered by ≥1 task; every task references ≥1 requirement. Tasks with no requirement are unapproved scope: remove or question them.
+- Every architecture component has tasks (no missing tasks).
 - Every accepted risk recorded in `03-design-review.md` that affects the work maps to a task or task constraint.
-- Task order respects dependencies; no circular prerequisites.
-- Each task is completable in one sitting (split L tasks that touch >5 files or mix concerns).
+- Task order respects dependencies; no circular dependencies (checked and recorded). Parallelizable and blocked tasks are marked.
+- Each task is completable in one sitting (split XL tasks, and L tasks that touch >5 files or mix concerns).
 
 ## Approval gate
 Set phase `4-implementation-planning` to `awaiting_approval`; present task count, order, risks, and open questions. STOP for human approval — this plan is the implementation contract.
