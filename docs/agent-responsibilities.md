@@ -6,8 +6,8 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 - **Role:** pipeline coordinator — intake, phase detection, prerequisite checks, delegation, gate enforcement, status upkeep.
 - **Inputs:** user story text or `US-###`; `workflow-status.yml`.
 - **Outputs:** `user-story.md`, `workflow-status.yml` updates; delegation reports.
-- **Tools:** read, search, edit (status files only), agent (restricted to the 8 phase agents), todo.
-- **Must not:** produce phase artifacts or code; approve phases; run phases in parallel or out of order.
+- **Tools:** read, search, edit (status files only), execute (only `tools/new-story.js` and read-only checks), agent (restricted to the 8 phase agents), todo.
+- **Must not:** produce phase artifacts or code; approve phases; delegate before intake has succeeded; run phases in parallel or out of order. After an explicit human approval it auto-continues with the next phase only, never beyond.
 - **Escalates:** invalid phase output after 2 retries; inconsistent workflow state; rejection cascades.
 
 ## Requirements Analyst (`requirements-analyst`) — phase 1

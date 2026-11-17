@@ -33,9 +33,11 @@ Every phase: an agent produces one artifact, validates it against its skill's qu
 
 **Orchestrated (recommended):**
 1. In Copilot chat, run `/sdlc-run As a user, I want … so that …`.
-2. The Orchestrator assigns `US-###`, runs phase 1 via the Requirements Analyst, and stops at the gate.
-3. Review the artifact; reply with an explicit decision: *"approve phase 1"*, *"reject: <reasons>"*, or answer the open questions.
-4. Run `/sdlc-run US-###` to continue to the next phase. Repeat through phase 8.
+2. The Orchestrator runs intake through `node tools/new-story.js` (assigns `US-###`, creates `user-story.md` and `workflow-status.yml`), checks it succeeded, runs phase 1 via the Requirements Analyst, and stops at the gate.
+3. Review the artifact and reply with an explicit decision: *"approve phase 1 for US-001"*, *"reject: <reasons>"*, or answer the open questions.
+4. On approval the Orchestrator records it and **automatically runs the next phase in the same turn**, stopping at that phase's gate. Repeat through phase 8. If you reply in a new chat or turn, run `/sdlc-run US-001`.
+
+Each approval authorizes exactly the phase named. There is no "approve everything" shortcut, so every phase still needs your explicit decision after you have seen its artifact. Phase 3 continues to phase 4 only when the design review decision is APPROVED, and phase 7 continues to phase 8 only when the verification status is READY FOR PR.
 
 **Direct phase invocation:** run the phase prompt (e.g. `/sdlc-3-design-review US-001`) or pick the agent in the agent selector. Phase agents still verify prerequisites and refuse to run out of order.
 
