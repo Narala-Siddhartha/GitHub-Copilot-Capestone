@@ -1,5 +1,5 @@
 ---
-name: "SDLC 1 — Requirements"
+name: "sdlc-1-requirements"
 description: "Phase 1: produce the requirements specification (01-requirements.md) for a story."
 agent: requirements-analyst
 argument-hint: "Story ID (e.g. US-001)"

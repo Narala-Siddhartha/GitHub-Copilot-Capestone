@@ -1,5 +1,5 @@
 ---
-name: "SDLC 6 — Code Review"
+name: "sdlc-6-code-review"
 description: "Phase 6: review the story branch diff and produce findings (06-code-review.md)."
 agent: code-reviewer
 argument-hint: "Story ID (e.g. US-001)"

@@ -1,5 +1,5 @@
 ---
-name: "SDLC 7 — Verify & Test"
+name: "sdlc-7-verify"
 description: "Phase 7: write and run requirement-mapped tests and produce the test report (07-test-report.md)."
 agent: test-engineer
 argument-hint: "Story ID (e.g. US-001)"

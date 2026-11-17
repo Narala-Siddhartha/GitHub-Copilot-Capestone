@@ -1,5 +1,5 @@
 ---
-name: "SDLC 2 — Architecture"
+name: "sdlc-2-architecture"
 description: "Phase 2: design the architecture (02-architecture.md) from approved requirements."
 agent: solution-architect
 argument-hint: "Story ID (e.g. US-001)"

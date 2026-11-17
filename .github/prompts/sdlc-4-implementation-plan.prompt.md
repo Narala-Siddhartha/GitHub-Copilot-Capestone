@@ -1,5 +1,5 @@
 ---
-name: "SDLC 4 — Implementation Plan"
+name: "sdlc-4-implementation-plan"
 description: "Phase 4: break the approved design into traceable tasks (04-implementation-plan.md)."
 agent: implementation-planner
 argument-hint: "Story ID (e.g. US-001)"

@@ -1,5 +1,5 @@
 ---
-name: "SDLC 8 — Pull Request"
+name: "sdlc-8-pull-request"
 description: "Phase 8: audit all gates, complete traceability, and create the pull request (08-pull-request.md)."
 agent: release-manager
 argument-hint: "Story ID (e.g. US-001)"

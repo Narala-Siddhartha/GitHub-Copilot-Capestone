@@ -1,5 +1,5 @@
 ---
-name: "SDLC Run"
+name: "sdlc-run"
 description: "Run or resume the full gated SDLC pipeline for a user story via the SDLC Orchestrator."
 agent: sdlc-orchestrator
 argument-hint: "New user story text, or an existing story ID (e.g. US-001)"

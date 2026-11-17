@@ -1,5 +1,5 @@
 ---
-name: "SDLC 5 — Implement"
+name: "sdlc-5-implement"
 description: "Phase 5: execute the approved implementation plan on a story branch (05-implementation-log.md)."
 agent: implementer
 argument-hint: "Story ID (e.g. US-001)"

@@ -1,5 +1,5 @@
 ---
-name: "SDLC 3 — Design Review"
+name: "sdlc-3-design-review"
 description: "Phase 3: independently review the architecture and produce findings (03-design-review.md)."
 agent: design-reviewer
 argument-hint: "Story ID (e.g. US-001)"
