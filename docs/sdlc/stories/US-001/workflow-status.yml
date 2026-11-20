@@ -1,0 +1,57 @@
+# Workflow status for one story. Copied by the Orchestrator at intake.
+# Status values: pending | in_progress | awaiting_approval | approved | rejected
+# approved/rejected require an explicit human decision recorded in chat.
+story: US-001
+title: "Advanced filters for amenities and property type"
+branch: "story/US-001-advanced-filters-for-amenities-and-prope"
+created: 2026-11-17
+phases:
+  1-requirements:
+    status: approved
+    agent: requirements-analyst
+    artifact: 01-requirements.md
+    approved_by: user
+    approved_at: 2026-11-17
+  2-architecture:
+    status: approved
+    agent: solution-architect
+    artifact: 02-architecture.md
+    approved_by: user
+    approved_at: 2026-11-17
+  3-design-review:
+    status: awaiting_approval
+    agent: design-reviewer
+    artifact: 03-design-review.md
+    approved_by: null
+    approved_at: null
+  4-implementation-planning:
+    status: pending
+    agent: implementation-planner
+    artifact: 04-implementation-plan.md
+    approved_by: null
+    approved_at: null
+  5-implementation:
+    status: pending
+    agent: implementer
+    artifact: 05-implementation-log.md
+    approved_by: null
+    approved_at: null
+  6-code-review:
+    status: pending
+    agent: code-reviewer
+    artifact: 06-code-review.md
+    approved_by: null
+    approved_at: null
+  7-verification-testing:
+    status: pending
+    agent: test-engineer
+    artifact: 07-test-report.md
+    approved_by: null
+    approved_at: null
+  8-pull-request:
+    status: pending
+    agent: release-manager
+    artifact: 08-pull-request.md
+    approved_by: null
+    approved_at: null
+pr_url: null

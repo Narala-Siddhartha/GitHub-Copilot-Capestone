@@ -4,6 +4,7 @@ dist/
 build/
 __pycache__/
 *.pyc
+.vscode/
 
 # Secrets — never commit
 .env
