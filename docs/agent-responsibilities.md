@@ -6,13 +6,14 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 - **Role:** pipeline coordinator — intake, phase detection, prerequisite checks, delegation, gate enforcement, status upkeep.
 - **Inputs:** user story text or `US-###`; `workflow-status.yml`.
 - **Outputs:** `user-story.md`, `workflow-status.yml` updates; delegation reports.
-- **Tools:** read, search, edit (status files only), execute (only `tools/new-story.js` and read-only checks), agent (restricted to the 8 phase agents), todo.
-- **Must not:** produce phase artifacts or code; approve phases; delegate before intake has succeeded; run phases in parallel or out of order. After an explicit human approval it auto-continues with the next phase only, never beyond.
+- **Tools:** read, search, edit (status files only), execute (only `tools/new-story.js` list/intake modes and read-only checks), agent (restricted to the 8 phase agents), todo.
+- **Must:** use the shared `story-flow-selection` skill for new/missing story input; offer resume or replace choices for incomplete flows; resume from recorded status, returning to an existing `awaiting_approval` gate without rerunning its agent.
+- **Must not:** produce phase artifacts or code; approve phases; delegate before intake has succeeded; run phases in parallel or out of order; directly delete story folders. Replacement is allowed only through `tools/new-story.js --replace-incomplete` after explicit user selection. After an explicit human approval it auto-continues with the next phase only, never beyond.
 - **Escalates:** invalid phase output after 2 retries; inconsistent workflow state; rejection cascades.
 
 ## Requirements Analyst (`requirements-analyst`) — phase 1
 - **Inputs:** `user-story.md`. **Outputs:** `01-requirements.md`, matrix REQ/AC columns.
-- **Tools:** read, search, edit. **Must not:** design solutions; invent missing requirements.
+- **Tools:** read, search, edit, execute (only `tools/new-story.js` list/intake modes and read-only checks), agent (restricted to `sdlc-orchestrator`), read-only Atlassian (`atlassian/*`) or Jira/Confluence-specific (`jira/*`, `confluence/*`) MCP tools. **Must:** use the matching authenticated MCP for Jira/Confluence sources; hand off if unavailable. Also use the shared `story-flow-selection` skill for new/missing story input; hand resume choices to the Orchestrator. **Must not:** design solutions; invent missing requirements; directly delete story folders.
 - **Escalates:** vague or contradictory stories (as Open Questions).
 
 ## Solution Architect (`solution-architect`) — phase 2
@@ -47,7 +48,7 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 
 ## Release Manager (`release-manager`) — phase 8
 - **Inputs:** all artifacts, all phases 1–7 approved, verification status READY FOR PR. **Outputs:** `08-pull-request.md` (Summary, Changes Made, Test Evidence, Known Limitations, Reviewer Checklist), `CHANGELOG.md` entry, completed matrix, the PR and its URL/status.
-- **Tools:** read, search, edit, execute (git push / gh pr create after approval only). **Must not:** ship with open gates, failed pre-PR checks or unwaived gaps; force-push; merge.
+- **Tools:** read, search, edit, execute, GitHub MCP (`github/*`), GitLab MCP (`gitlab/*`). **Must:** use the sole available authenticated provider MCP for PR/MR creation; if both are available, ask the human which one to use; if neither is available, follow the documented CLI/manual fallback. Create only after PR-detail approval. **Must not:** ship with open gates, failed pre-PR checks or unwaived gaps; force-push; merge.
 - **Escalates:** failed pre-PR checks, secrets in the diff, matrix gaps, push/auth failures, merge conflicts.
 
 ## Shared rules (all agents)

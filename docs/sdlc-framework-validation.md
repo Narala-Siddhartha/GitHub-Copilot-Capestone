@@ -15,7 +15,7 @@ Limitations that affect how far results generalise:
 - **No human was available inside a subagent.** Wherever an agent would ask or wait, it put the question in its final reply. Interactive question tools were not exercised.
 - **Upstream artifacts for scenarios 2 to 8 were seeded fixtures** (marked as such), not produced by the preceding agent. Phase handoffs were therefore tested one at a time, not as a continuous chain, and approvals were seeded by a harness identity, not a human.
 - **One run per scenario.** LLM behaviour is non-deterministic; a PASS means "behaved correctly in this run".
-- **Not tested:** the Atlassian MCP server, GitHub MCP / `gh` PR creation (no remote exists), non-VS-Code Copilot surfaces, and a complete eight-phase run.
+- **Not tested:** Atlassian/Jira/Confluence MCP source intake, GitHub/GitLab MCP or `gh` PR creation (no remote exists), non-VS-Code Copilot surfaces, and a complete eight-phase run.
 - A status of **PARTIAL** means the core requirement was met but a material defect was found.
 
 ## 2. Scenario results

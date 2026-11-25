@@ -15,7 +15,7 @@ How this repository's GitHub Copilot customizations fit together, and how to ext
 │   └── source-code.instructions.md      ← update when a stack is chosen
 ├── agents/                      # 9 custom agents (*.agent.md)
 ├── prompts/                     # 9 slash prompts (*.prompt.md)
-├── skills/                      # 8 phase skills (SKILL.md + assets/ + scripts/)
+├── skills/                      # Phase skills and shared story-flow selection skill
 └── hooks/
     ├── sdlc-hooks.json          # Hook registration (supported events only)
     └── scripts/*.js             # Node.js hook implementations
@@ -39,12 +39,16 @@ docs/
 | `*.prompt.md` | One slash command per phase + `/sdlc-run` | Type `/` in chat |
 | `SKILL.md` | Phase procedure + artifact template + scripts | Loaded automatically by the phase agent; also `/` commands |
 | Hooks | Deterministic enforcement: deny dangerous commands, block secrets, audit, validate artifacts, capture test runs | Automatic at lifecycle events |
+| `story-flow-selection` skill | Shared resume-or-replace preflight for `/sdlc-run` and direct Phase 1 | Loaded by the Orchestrator and Requirements Analyst |
 
 ## Invoking the pipeline
 
-- Full pipeline: `/sdlc-run <user story>` then `/sdlc-run US-###` after each approval.
+- Full pipeline: `/sdlc-run <user story>` then `/sdlc-run US-###` after each approval. Before fresh intake, the Orchestrator offers to resume an incomplete flow or replace one selected incomplete flow.
 - Single phase: `/sdlc-1-requirements US-001` … `/sdlc-8-pull-request US-001`.
+- Direct Phase 1 with new story text uses the same resume-or-replace preflight. Choosing resume routes to the Orchestrator at that story's current phase.
 - Direct agent chat: pick e.g. *Design Reviewer* in the agent selector and give it a story ID.
+- Story discovery uses `node tools/new-story.js --list-incomplete`. Folder replacement is permitted only through `--replace-incomplete <US-ID>` after explicit user selection; shared files and audit logs are never removed.
+- Validate the intake and deletion guard with `node --test tools/new-story.test.js tools/pre-tool-guard.test.js`.
 
 ## Extending the framework
 
@@ -60,7 +64,10 @@ docs/
 
 **Adding a hook:** use only supported events (`SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PreCompact`, `SubagentStart`, `SubagentStop`, `Stop`); keep scripts fast (timeouts are set per hook) and non-throwing; log decisions to `docs/sdlc/audit/`. Note that not every event fires on every Copilot surface (VS Code vs CLI vs cloud) — treat hooks as defense in depth, not the only gate.
 
-**MCP integrations:** the Requirements Analyst is granted `atlassian/*` in its `tools:` so it can read Jira issues and Confluence pages. This assumes the MCP server is registered under the name `atlassian` (e.g. in `.vscode/mcp.json`); if you register it under another name, update that `tools:` entry. Authenticate the server before running phase 1. Keep MCP access role-scoped: do not add servers globally. When a backlog or the GitHub MCP server is configured for other roles, grant it the same way (e.g. `release-manager`).
+**MCP integrations:**
+- Phase 1 grants the Requirements Analyst read-only `atlassian/*`, `jira/*`, and `confluence/*` tools. Use the authenticated Atlassian MCP when it supports the source; otherwise use the matching Jira or Confluence MCP. Register servers under these names or update the agent's `tools:` entries to match your MCP server IDs.
+- Phase 8 grants the Release Manager `github/*` and `gitlab/*`. Use the sole authenticated provider MCP that exposes PR/MR creation and status tools. If both are usable, the Release Manager must ask the human to choose before proceeding. If neither is usable, it follows the documented CLI/manual fallback.
+- Authenticate MCP servers before the relevant phase. Keep MCP access role-scoped; do not grant integrations to every agent.
 
 ## Known surface limitations
 

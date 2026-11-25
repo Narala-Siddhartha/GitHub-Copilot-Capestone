@@ -11,6 +11,7 @@ Package the fully approved story into a reviewable pull request with a complete,
 ## Required inputs
 - All artifacts `01`–`07` with phases 1–7 `approved` in `workflow-status.yml`, plus `CHANGELOG.md` (create it if absent) and the source changes
 - Story branch with all commits; clean working tree
+- Available authenticated GitHub and/or GitLab MCP tools for the target repository
 
 ## Procedure
 1. **Pre-PR validation** (stop and report the reason if any mandatory condition fails; record each result, with evidence, in the gate audit):
@@ -27,9 +28,15 @@ Package the fully approved story into a reviewable pull request with a complete,
 3. **PR preparation**: identify the current branch and the target base branch (default `main`; confirm with the human if unclear); review the complete diff (`git diff <base>...HEAD`); check divergence from the base (`git log <base>..HEAD`, `git log HEAD..<base>`) and surface conflicts, never auto-resolving silently; confirm `git status` is clean.
 4. **Changelog**: add an entry for this story to `CHANGELOG.md` (Keep a Changelog style: Added/Changed/Fixed), referencing the story ID and requirement IDs. Commit it as `docs: update changelog (US-###)`.
 5. Prepare a meaningful PR title (`US-###: <outcome>`) and assemble the PR description from [PR template](./assets/pr-template.md) → `08-pull-request.md`, with the mandatory sections Summary, Changes Made, Test Evidence, Known Limitations and Reviewer Checklist, plus the gate audit, traceability chain and links to the documentation.
-6. Set phase `8-pull-request` to `awaiting_approval`; present the proposed PR details (title, base and head branches, description, changelog entry, gate audit) to the human; STOP.
-7. **Only after explicit approval**: commit `08-pull-request.md`, push the branch (`git push -u origin story/...`), and create the PR (`gh pr create --base <base> --title "US-###: <title>" --body-file docs/sdlc/stories/US-###/08-pull-request.md`, or the GitHub MCP tools if configured). No remote and no `gh`/MCP? Record the exact commands in the artifact and report.
-8. Do not merge the PR. Report the PR URL and its status (open, draft, checks pending). Record the URL in the artifact and `workflow-status.yml`; mark phase 8 `approved` only with the human's recorded decision.
+6. **Select the PR provider before finalizing the PR artifact**:
+   - Count a provider only if its authenticated MCP exposes usable PR/MR creation and status tools for this repository.
+   - If exactly one GitHub or GitLab MCP is available for this repository, select that provider.
+   - If both are available, ask the human to choose GitHub or GitLab and wait. Their provider choice is not approval to create the PR/MR.
+   - If neither is available, document that fact and use a configured provider CLI only if one is available. If no MCP or CLI is available, record the exact manual commands in the artifact and report.
+   Record the selected provider in `08-pull-request.md`.
+7. Present the proposed PR/MR details (title, provider, head and base branches, description, changelog entry, gate audit), set phase `8-pull-request` to `awaiting_approval`, and STOP.
+8. **Only after explicit PR-detail approval**: commit `08-pull-request.md`, push the branch using the configured Git transport, and create the PR/MR using the selected provider MCP. With GitHub MCP, create a PR; with GitLab MCP, create a merge request. Use a configured CLI only for the documented no-MCP fallback. Never switch providers silently after failure; report the error and manual commands instead.
+9. Do not merge the PR/MR. Report its URL and status (open, draft, checks pending). Record them in the artifact and `workflow-status.yml`; mark phase 8 `approved` only with the human's recorded decision.
 
 ## Output format
 `08-pull-request.md` per the template, with these mandatory PR description sections:
@@ -49,6 +56,7 @@ Package the fully approved story into a reviewable pull request with a complete,
 - [ ] Working tree clean; artifacts committed; no force-push used
 - [ ] PR body links the relevant documentation
 - [ ] PR created only after explicit human approval; not merged
+- [ ] PR provider selected from available MCPs; if both GitHub and GitLab MCPs are available, human choice recorded
 
 ## Failure handling
 - Open gate or matrix gap → abort with a precise list; options: waive (human), or route back via the Orchestrator.

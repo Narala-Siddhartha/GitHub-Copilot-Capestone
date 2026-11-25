@@ -9,15 +9,21 @@ argument-hint: 'Story ID (e.g. US-001)'
 Convert a raw user story into a precise, testable, traceable requirements specification that downstream phases can design, plan, implement, and verify against.
 
 ## Required inputs
-- `docs/sdlc/stories/US-###/user-story.md`, created at intake from one of: pasted text, a repo file, a Jira issue, or a Confluence page. Jira and Confluence are read through the Atlassian MCP server (see Source intake).
+- `docs/sdlc/stories/US-###/user-story.md`, created at intake from one of: pasted text, a repo file, a Jira issue, or a Confluence page. Read Jira/Confluence sources through the matching available MCP server (Atlassian, Jira, or Confluence).
 - `docs/sdlc/stories/US-###/workflow-status.yml`
 - `.github/instructions/traceability.instructions.md` (ID scheme)
 
+## Story-flow preflight
+- When Phase 1 is invoked with new story text or no story ID, follow the shared `story-flow-selection` skill before creating or editing story artifacts.
+- On a resume choice, do not produce Phase 1 artifacts. Hand the selected story ID to `sdlc-orchestrator` so it resumes at the first unapproved phase.
+- On a new-story choice, use `node tools/new-story.js` for intake. If replacing an incomplete story, include `--replace-incomplete <selected-US-ID>` only after the user explicitly selected that story.
+- When an existing story ID is explicitly supplied, inspect its workflow status. Run Phase 1 directly only when `1-requirements` is `pending` and is the first unapproved phase. Otherwise hand off to `sdlc-orchestrator` to resume the correct state/gate; never duplicate an awaiting artifact or bypass a gate.
+
 ## Source intake
 - **Pasted text or repo file:** copy verbatim into `user-story.md`.
-- **Jira / Confluence:** use the Atlassian MCP tools to fetch the issue (summary, description, acceptance criteria, comments, linked issues) or page. Copy the content verbatim into `user-story.md` and record the source key/URL. If the Atlassian MCP server is not configured or not authenticated, stop and tell the human; ask them to paste the content. Never guess content.
+- **Jira / Confluence:** use the authenticated Atlassian MCP when available for that source; otherwise use the matching Jira or Confluence MCP. Fetch the issue/page and relevant details (summary, description, acceptance criteria, comments, linked issues), copy the source content verbatim into `user-story.md`, and record its key/URL. If no suitable MCP is configured or authenticated, stop and ask the human to paste the content. Never guess content.
 - **Word documents:** not readable directly; ask the human to paste the text or export to Markdown.
-- If no story is supplied, stop and ask. Do not invent one.
+- If no story is supplied and there are no incomplete flows, ask the human for a story and stop. If incomplete flows exist, ask whether to resume one or provide a new story as described by the shared preflight; do not invent story content.
 
 ## Procedure
 1. Read the complete user story. Identify the business problem, expected outcome, actors, stakeholders, system boundary, triggers, and stated constraints. Quote the story verbatim in the artifact (section 3).
@@ -55,7 +61,7 @@ Convert a raw user story into a precise, testable, traceable requirements specif
 - [ ] Traceability matrix row per REQ/NFR
 
 ## Failure handling
-- No story supplied, or Atlassian MCP unavailable/unauthenticated → stop and ask the human; produce nothing.
+- No story supplied, or no suitable Jira/Confluence MCP available/authenticated for a linked source → stop and ask the human; produce nothing.
 - Story too vague for even one testable REQ → write only Open Questions, keep status `in_progress`, escalate.
 - Internal contradictions → one Open Question per contradiction showing both readings.
 - On human rejection → revise, append Revision History, never renumber surviving IDs.

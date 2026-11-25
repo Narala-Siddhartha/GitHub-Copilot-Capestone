@@ -10,6 +10,10 @@ This repository implements a multi-agent, gated Software Development Lifecycle (
 4. **Traceability is mandatory.** Every artifact element carries a stable ID (see `.github/instructions/traceability.instructions.md`). Code, tests, and PRs must reference the IDs they implement or verify.
 5. **No production changes** outside the scope of an approved implementation plan.
 
+## Story entry and resume
+
+Before `/sdlc-run` or direct Phase 1 starts a new story from free text (or is invoked without a story), use the shared `story-flow-selection` skill. It checks for incomplete story flows and asks the user to resume one or start new. Resuming discards newly supplied story text and continues from recorded workflow state; an `awaiting_approval` phase returns to its existing gate without rerunning its agent. Starting new can replace only the specific incomplete story folder explicitly selected by the user; completed stories, unselected stories, shared framework files, templates, and audit logs are preserved. Never delete story folders directly; replacement must use the validated `tools/new-story.js --replace-incomplete` path.
+
 ## Where things live
 
 | Thing | Location |

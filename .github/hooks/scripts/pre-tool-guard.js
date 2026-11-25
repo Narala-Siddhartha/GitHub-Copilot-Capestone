@@ -29,6 +29,7 @@ const DANGEROUS_COMMANDS = [
   [/chmod\s+777\b/i, 'world-writable permissions'],
   [/\bgh\s+pr\s+merge\b/i, 'PR merge is a human action in this SDLC'],
 ];
+const DIRECT_STORY_FOLDER_DELETE = /\b(?:remove-item|rm|rmdir|rd|del|erase)\b[^|;&]*(?:docs[\\/]sdlc[\\/]stories[\\/]US-\d+)/i;
 
 const SECRET_PATHS = /(^|[\\\/.])(\.env(\.[\w.]+)?|id_rsa[^\\\/]*|[^\\\/]*\.(pem|key|pfx|p12)|[^\\\/]*credentials[^\\\/]*|\.netrc|\.npmrc|\.git-credentials)$/i;
 const PROTECTED_WRITE = /(docs[\\\/]sdlc[\\\/]audit[\\\/]|\.github[\\\/]hooks[\\\/])/i;
@@ -47,6 +48,9 @@ const command = String(input.command || input.cmd || input.script || texts.join(
 const filePath = String(input.path || input.file_path || input.filePath || input.uri || '');
 
 if (EXEC_TOOLS.test(tool)) {
+  if (DIRECT_STORY_FOLDER_DELETE.test(command)) {
+    decide('deny', 'Story folders may only be replaced through the validated tools/new-story.js --replace-incomplete flow after explicit user selection.');
+  }
   for (const [re, why] of DANGEROUS_COMMANDS) {
     if (re.test(command)) decide('deny', `Blocked dangerous command (${why}). See .github/instructions/security.instructions.md.`);
   }
