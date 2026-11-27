@@ -8,16 +8,23 @@ argument-hint: 'Used by sdlc-run and Phase 1 entry points'
 ## Purpose
 Use one consistent resume-or-replace decision before creating a new story through `/sdlc-run` or direct Phase 1 invocation.
 
+## How to speak to the user
+- Use simple, everyday words in every question, choice, explanation, error, and update. Do not expect the user to know SDLC terms.
+- Explain “unfinished story” as work that has not gone through all review steps yet. Avoid terms such as “workflow state” or “first unapproved phase” in the question.
+- List each story in a readable way: its name, where work stopped (for example, “Design review”), and its ID for reference.
+- Clearly say that “continue” keeps working on that story, while “start a new story” removes the selected unfinished story’s files and starts over. Explain that other stories and shared project files are kept.
+- Ask one clear question with simple options. If the user does not answer clearly, explain what is unclear and ask again without taking action.
+
 ## Procedure
 1. For a new story input, or when no story was supplied, run `node tools/new-story.js --list-incomplete`. Parse its JSON output. If it exits non-zero, report the error and stop without intake or cleanup.
 2. If no incomplete stories are listed:
    - With story text, continue with ordinary intake.
    - Without story text, ask the user to provide a story and stop.
-3. If one or more incomplete stories are listed, show each story ID, title, first unapproved phase, and status. Ask the user to choose:
-   - Resume one listed story; or
-   - Start a new story by replacing one specifically selected incomplete story.
+3. If one or more unfinished stories are listed, show each story's name, where work stopped (for example, “Design review”), and ID. Ask in simple words:
+   - **Continue this story** — choose a story to carry on with. Any new story text you sent will not be used.
+   - **Start a new story instead** — choose one unfinished story to remove, then provide the new story. Only the chosen story's files are removed. Completed stories and shared project files are kept.
    For multiple stories, every option must identify the exact story ID. Never choose a story implicitly.
-4. If there is no new story text, ask whether the user wants to provide a new story or resume a listed flow. If they choose a new story, wait for that story text before intake.
+4. If no story text was supplied, ask: “Would you like to continue one of these stories, or send a new story to start? If you start new, choose which unfinished story to replace.” If they choose a new story, wait for that story text before intake.
 5. If the user chose new but has not provided the story yet, retain the selected story ID in conversation context. When the story arrives, honor that prior choice without asking again, but let the script revalidate the selected flow. If context is unavailable, ask again.
 6. On resume, discard any newly supplied story text and hand the selected ID to `sdlc-orchestrator`. Continue from the recorded state: an `awaiting_approval` phase returns to its existing gate without rerunning its agent; a valid artifact left `in_progress` returns to the gate; a missing/invalid in-progress artifact resumes that phase agent. Do not run Phase 1 out of order.
 7. On new, write the provided story text verbatim to `docs/sdlc/stories/.intake.md`, then run `node tools/new-story.js --file docs/sdlc/stories/.intake.md --title "<short title>" --replace-incomplete <selected-US-ID>`. This script is the only permitted deletion path. It revalidates the selected folder and its incomplete status before replacing it.

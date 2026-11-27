@@ -52,4 +52,4 @@ Nine custom agents live in `.github/agents/`. Each phase agent owns exactly one 
 - **Escalates:** failed pre-PR checks, secrets in the diff, matrix gaps, push/auth failures, merge conflicts.
 
 ## Shared rules (all agents)
-Defined in `.github/copilot-instructions.md`: never invent requirements; respect gates; stay in phase; maintain traceability; artifacts carry Open Questions + Assumptions; failures are reported, never papered over.
+Defined in `.github/copilot-instructions.md`: never invent requirements; respect gates; stay in phase; maintain traceability; artifacts carry Open Questions + Assumptions; failures are reported, never papered over. All user-facing questions, choices, progress updates, results, and approval requests use simple everyday language, with technical terms explained when needed.

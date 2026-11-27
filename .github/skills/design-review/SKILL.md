@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Challenge the architecture rather than rubber-stamp it: independently re-verify requirements coverage and stress-test the design; output graded findings and a decision.
 
+## User-facing communication
+- Explain each important finding in plain words: what may go wrong, who or what is affected, and what should happen next.
+- Avoid unexplained severity labels or acronyms in the summary; explain them briefly when they must be included.
+- Start the review summary with the overall result and the most important practical effects.
+
 ## Required inputs
 - `01-requirements.md` (phase 1 `approved`), `02-architecture.md` (phase 2 produced)
 

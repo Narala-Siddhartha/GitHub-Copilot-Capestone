@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Verify the complete implementation against the approved requirements, with executable evidence, and identify regressions. Surface every defect rather than fixing it, and never report a result that was not actually obtained.
 
+## User-facing communication
+- Explain test results in everyday words. Say what works, what failed, and what the failure means; do not rely on test names, exit codes, or acronyms alone.
+- If something could not be checked, say what was not checked and why.
+- End with a clear result: ready to continue, not ready, or blocked, followed by the reason and next step.
+
 ## Required inputs
 - `01-requirements.md` (the verification contract), `02-architecture.md` (API contracts), `04-implementation-plan.md`, `06-code-review.md`, story-branch source and existing tests — phases 1–6 `approved`
 - `.github/instructions/testing.instructions.md`

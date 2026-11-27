@@ -22,6 +22,8 @@ The architecture separates **coordination** (the Orchestrator), **phase work** (
 
 For Jira or Confluence story sources, Phase 1 uses the authenticated Atlassian MCP when suitable, or the corresponding Jira/Confluence MCP. In Phase 8, the Release Manager uses the available authenticated GitHub or GitLab MCP that supports PR/MR creation. If both are available, it asks you to choose; provider selection is separate from PR/MR approval.
 
+All questions, choices, progress updates, and approval requests should use simple, everyday words. Technical terms and abbreviations are briefly explained when they are needed.
+
 ## Setup and prerequisites
 
 - **VS Code and GitHub Copilot:** Open this repository in a VS Code version that supports custom agents, prompt files, skills, repository instructions, and hooks. Sign in to Copilot and enable the repository customizations in your Copilot chat/agent settings.

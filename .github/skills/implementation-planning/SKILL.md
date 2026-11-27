@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Turn the approved design into an executable contract: a dependency-ordered task list where every task is small, verifiable, and traceable to requirements.
 
+## User-facing communication
+- Explain the plan in plain words before showing technical task details.
+- When asking for approval or clarification, say what decision is needed, why it matters, and what will happen for each option.
+- Summarize the amount and order of work, along with risks and open questions, in everyday language.
+
 ## Required inputs
 - `01-requirements.md`, `02-architecture.md`, `03-design-review.md` — phases 1–3 `approved`
 - Current repository layout (plan file-level changes realistically)

@@ -17,6 +17,8 @@ user story
 
 Every phase: an agent produces one artifact, validates it against its skill's quality checklist, sets its phase to `awaiting_approval`, and **stops**. A human approves or rejects in chat; the decision is recorded in `workflow-status.yml`. No phase starts until all earlier phases are `approved`.
 
+All questions and updates shown to the user should use simple, everyday words. Explain technical terms when they are needed, and make clear what each choice will do.
+
 ## Phases, agents, artifacts
 
 | # | Phase | Agent | Prompt | Artifact (in `docs/sdlc/stories/US-###/`) |

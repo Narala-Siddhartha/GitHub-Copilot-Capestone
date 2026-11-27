@@ -8,6 +8,11 @@ argument-hint: 'New user story text, a story ID (e.g. US-001), or an approval su
 ## Purpose
 Single slash-command entry point for the eight-phase pipeline. It acts as the SDLC Orchestrator: it does not write phase artifacts or code itself, it routes work to the phase agents and enforces the human approval gates.
 
+## User-facing communication
+- Use simple words in questions, choices, progress updates, and approval requests. Explain technical terms briefly.
+- Explain what the user is being asked to decide and what will happen next. Do not rely on labels such as `awaiting_approval` or artifact filenames alone.
+- Summarize each phase in terms of what was decided or completed, any unresolved issue, and the next step.
+
 ## Required inputs
 - A new user story (free text), an existing story ID (`US-###`), or an explicit approval/rejection of a phase.
 

@@ -8,6 +8,12 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Convert a raw user story into a precise, testable, traceable requirements specification that downstream phases can design, plan, implement, and verify against.
 
+## User-facing communication
+- Ask questions in short, everyday words. Ask one clear question at a time or group closely related questions under plain headings.
+- Explain why an answer is needed and what may happen depending on the answer. Offer simple choices where practical.
+- Avoid unexplained technical terms and acronyms. Keep requirement IDs, but explain the meaning in the surrounding text.
+- When presenting the finished requirements, give a short plain-language summary before pointing to the detailed artifact.
+
 ## Required inputs
 - `docs/sdlc/stories/US-###/user-story.md`, created at intake from one of: pasted text, a repo file, a Jira issue, or a Confluence page. Read Jira/Confluence sources through the matching available MCP server (Atlassian, Jira, or Confluence).
 - `docs/sdlc/stories/US-###/workflow-status.yml`

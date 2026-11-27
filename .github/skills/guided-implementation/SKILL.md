@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Execute the approved plan faithfully: working code on a story branch, one task at a time, each verified and committed with traceability, with every deviation recorded and escalated.
 
+## User-facing communication
+- Explain proposed changes and blockers in everyday words. Avoid tool output or code terms without a brief explanation.
+- Before asking permission for a risky change, say what will change, why it is needed, and what the likely effect is.
+- At the approval gate, summarize what was completed, what was checked, and any remaining problems in plain language.
+
 ## Required inputs
 - `04-implementation-plan.md` — phases 1–4 `approved`; `01-requirements.md`, `02-architecture.md`, `03-design-review.md` (decision APPROVED)
 - `.github/copilot-instructions.md`, `.github/instructions/source-code.instructions.md` (standards), and existing repository conventions

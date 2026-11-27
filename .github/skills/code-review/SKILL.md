@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Independently verify that the implementation is correct, secure, tested, maintainable, dependency-safe and compliant with the architecture and plan, without assuming the implementer is right. Produce actionable findings, not fixes.
 
+## User-facing communication
+- Explain findings in plain words: what is wrong or might go wrong, how it affects the user or project, and the next step.
+- Do not show unexplained severity labels, file paths, or acronyms as the whole explanation. Include technical details as supporting evidence after the plain-language summary.
+- State clearly whether the work can move forward and why.
+
 ## Required inputs
 - Story branch diff: `git diff main...story/US-###-<slug>` (read-only git only), plus the test code
 - `01-requirements.md`, `02-architecture.md`, `04-implementation-plan.md`, `05-implementation-log.md` — phase 5 `awaiting_approval`

@@ -10,6 +10,15 @@ This repository implements a multi-agent, gated Software Development Lifecycle (
 4. **Traceability is mandatory.** Every artifact element carries a stable ID (see `.github/instructions/traceability.instructions.md`). Code, tests, and PRs must reference the IDs they implement or verify.
 5. **No production changes** outside the scope of an approved implementation plan.
 
+## Plain-language communication
+
+- Write every question, choice, progress update, result, and approval request shown to the user in simple, everyday language. Assume the reader may not know software development terms.
+- Prefer short sentences and familiar words. Avoid unexplained acronyms, abbreviations, tool names, and status labels. When a technical term is necessary, explain it briefly the first time (for example, “pull request (a request to review and add changes)”).
+- Make each choice clear: say what it means and what will happen next. State important effects—especially deleting or replacing files—in direct words before asking the user to choose.
+- Ask focused questions, explain why an answer is needed, and offer clearly worded options when possible. Do not use technical shorthand as the only option label.
+- Keep artifact IDs, file paths, exact commands, and technical details accurate where needed, but introduce them with a plain-language explanation. Summaries shown to the user must explain the outcome without requiring them to read the artifact.
+- Before sending a response or question, check: “Could someone unfamiliar with software understand what I am asking and what will happen?”
+
 ## Story entry and resume
 
 Before `/sdlc-run` or direct Phase 1 starts a new story from free text (or is invoked without a story), use the shared `story-flow-selection` skill. It checks for incomplete story flows and asks the user to resume one or start new. Resuming discards newly supplied story text and continues from recorded workflow state; an `awaiting_approval` phase returns to its existing gate without rerunning its agent. Starting new can replace only the specific incomplete story folder explicitly selected by the user; completed stories, unselected stories, shared framework files, templates, and audit logs are preserved. Never delete story folders directly; replacement must use the validated `tools/new-story.js --replace-incomplete` path.

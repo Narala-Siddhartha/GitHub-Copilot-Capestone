@@ -1864,3 +1864,103 @@
 {"ts":"2026-11-25T04:53:22.138Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
 {"ts":"2026-11-25T04:53:22.620Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\README.md"}
 {"ts":"2026-11-25T04:53:24.974Z","event":"Stop"}
+{"ts":"2026-11-27T04:03:14.431Z","event":"SessionStart"}
+{"ts":"2026-11-27T04:03:15.374Z","event":"UserPromptSubmit","promptPreview":"Ensure that whatever questions or content you ask and show to user should be in simple words and every single end user who doesnt even have a lot of technical knowledge should be able to understand"}
+{"ts":"2026-11-27T04:03:24.067Z","event":"PreToolUse","tool":"grep","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:24.069Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:24.109Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:24.128Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:25.553Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\copilot-instructions.md"}
+{"ts":"2026-11-27T04:03:25.971Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\README.md"}
+{"ts":"2026-11-27T04:03:26.398Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\docs\\sdlc-workflow.md"}
+{"ts":"2026-11-27T04:03:26.828Z","event":"PostToolUse","tool":"grep"}
+{"ts":"2026-11-27T04:03:35.605Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:36.058Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:03:40.627Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:42.775Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:43.185Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\story-flow-selection\\SKILL.md"}
+{"ts":"2026-11-27T04:03:46.735Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:50.134Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:50.661Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:03:53.046Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:55.181Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:03:55.689Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\story-flow-selection\\SKILL.md"}
+{"ts":"2026-11-27T04:04:03.917Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:04.468Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:13.505Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:14.012Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:17.430Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:17.936Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:20.796Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.718Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.755Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.770Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.820Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.842Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.850Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:24.882Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:25.405Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\architecture-design\\SKILL.md"}
+{"ts":"2026-11-27T04:04:25.800Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\design-review\\SKILL.md"}
+{"ts":"2026-11-27T04:04:26.179Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\implementation-planning\\SKILL.md"}
+{"ts":"2026-11-27T04:04:26.581Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\guided-implementation\\SKILL.md"}
+{"ts":"2026-11-27T04:04:26.964Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\code-review\\SKILL.md"}
+{"ts":"2026-11-27T04:04:27.342Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\verification-testing\\SKILL.md"}
+{"ts":"2026-11-27T04:04:27.704Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\pull-request-creation\\SKILL.md"}
+{"ts":"2026-11-27T04:04:32.593Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:33.075Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:35.568Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:36.239Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:39.187Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:39.784Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:42.270Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:42.754Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:45.231Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:45.662Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:48.251Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:48.667Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:51.198Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:51.652Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:57.024Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:04:57.477Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:04:59.742Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:00.259Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:02.679Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:06.196Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:06.704Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\agents\\release-manager.agent.md"}
+{"ts":"2026-11-27T04:05:09.836Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:10.367Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:13.280Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:13.778Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:18.959Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:19.437Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:21.701Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:22.207Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:25.505Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:26.047Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:28.426Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:28.990Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:31.233Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:31.723Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:34.456Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:35.018Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:37.087Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:37.591Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:42.247Z","event":"PreToolUse","tool":"bash","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:42.340Z","event":"PreToolUse","tool":"bash","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:42.365Z","event":"PreToolUse","tool":"grep","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:42.407Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:42.433Z","event":"PreToolUse","tool":"read","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:43.019Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\skills\\story-flow-selection\\SKILL.md"}
+{"ts":"2026-11-27T04:05:44.786Z","event":"PostToolUse","tool":"read","file":"C:\\Users\\siddu\\OneDrive\\Desktop\\Github Copilot Capestone\\GitHub-Copilot-Capestone\\.github\\copilot-instructions.md"}
+{"ts":"2026-11-27T04:05:45.298Z","event":"PostToolUse","tool":"grep"}
+{"ts":"2026-11-27T04:05:45.797Z","event":"PostToolUse","tool":"bash","command":"node tools\\validate-framework.js"}
+{"ts":"2026-11-27T04:05:46.260Z","event":"PostToolUse","tool":"bash","command":"git --no-pager diff --check; git --no-pager status --short --branch"}
+{"ts":"2026-11-27T04:05:49.992Z","event":"PreToolUse","tool":"edit","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:50.498Z","event":"PostToolUse","tool":"edit"}
+{"ts":"2026-11-27T04:05:56.993Z","event":"PreToolUse","tool":"bash","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:57.085Z","event":"PreToolUse","tool":"bash","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:57.152Z","event":"PreToolUse","tool":"grep","decision":"allow","reason":null}
+{"ts":"2026-11-27T04:05:57.839Z","event":"PostToolUse","tool":"grep"}
+{"ts":"2026-11-27T04:05:58.575Z","event":"PostToolUse","tool":"bash","command":"git --no-pager diff --check; git --no-pager status --short --branch"}
+{"ts":"2026-11-27T04:05:59.087Z","event":"PostToolUse","tool":"bash","command":"node tools\\validate-framework.js"}
+{"ts":"2026-11-27T04:06:03.048Z","event":"Stop"}

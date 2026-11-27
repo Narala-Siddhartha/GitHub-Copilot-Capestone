@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Produce an architecture that demonstrably satisfies every approved requirement, with each significant decision captured as an ADR with options and trade-offs.
 
+## User-facing communication
+- Explain design choices in everyday words before using technical names.
+- When a decision is needed, describe the options, their practical differences, and why the user's choice matters. Define technical terms briefly.
+- Give a short plain-language summary of what the design means before linking the detailed architecture.
+
 ## Required inputs
 - `docs/sdlc/stories/US-###/01-requirements.md` (phase 1 `approved`)
 - Existing codebase structure, existing technology and infrastructure constraints, and `.github/instructions/source-code.instructions.md` (current stack, if any)

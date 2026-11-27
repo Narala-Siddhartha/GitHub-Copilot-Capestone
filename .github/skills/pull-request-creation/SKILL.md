@@ -8,6 +8,11 @@ argument-hint: 'Story ID (e.g. US-001)'
 ## Purpose
 Package the fully approved story into a reviewable pull request with a complete, auditable traceability chain — and act as the final gate that refuses to ship anything unapproved.
 
+## User-facing communication
+- Explain in plain words what the proposed change does and what reviewers will be asked to check.
+- Describe the GitHub/GitLab choice as “where to open the review request,” and explain that choosing a service is not the same as approving creation.
+- Summarize any failed checks or missing setup in terms of what it means and what the user can do next. Keep exact commands as additional detail, not the only explanation.
+
 ## Required inputs
 - All artifacts `01`–`07` with phases 1–7 `approved` in `workflow-status.yml`, plus `CHANGELOG.md` (create it if absent) and the source changes
 - Story branch with all commits; clean working tree
@@ -30,8 +35,8 @@ Package the fully approved story into a reviewable pull request with a complete,
 5. Prepare a meaningful PR title (`US-###: <outcome>`) and assemble the PR description from [PR template](./assets/pr-template.md) → `08-pull-request.md`, with the mandatory sections Summary, Changes Made, Test Evidence, Known Limitations and Reviewer Checklist, plus the gate audit, traceability chain and links to the documentation.
 6. **Select the PR provider before finalizing the PR artifact**:
    - Count a provider only if its authenticated MCP exposes usable PR/MR creation and status tools for this repository.
-   - If exactly one GitHub or GitLab MCP is available for this repository, select that provider.
-   - If both are available, ask the human to choose GitHub or GitLab and wait. Their provider choice is not approval to create the PR/MR.
+   - If exactly one provider is available, use it.
+   - If both GitHub and GitLab are available, ask: “Where would you like the review request opened: GitHub or GitLab?” Explain that both are sites used to review code. Wait for the answer. Choosing a site does not approve creating the review request.
    - If neither is available, document that fact and use a configured provider CLI only if one is available. If no MCP or CLI is available, record the exact manual commands in the artifact and report.
    Record the selected provider in `08-pull-request.md`.
 7. Present the proposed PR/MR details (title, provider, head and base branches, description, changelog entry, gate audit), set phase `8-pull-request` to `awaiting_approval`, and STOP.
